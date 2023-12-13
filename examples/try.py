@@ -6,7 +6,7 @@ from utils import display_borderless_tables
 Steps:
 
 (1) You need to setup venv, pycharm should automatically get it 
-otherwise create an environment and use pip -r requirements.txt
+otherwise create an environment with python 3.10 and use pip -r requirements.txt
 (2) Install PaddleOCR through pip install img2table[paddle]
 (3) You should be able to run this file which can parse a borderless
 table. 
