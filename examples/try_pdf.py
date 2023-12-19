@@ -1,7 +1,7 @@
 from io import BytesIO
 
 from img2table.document import PDF
-from img2table.ocr import PaddleOCR
+from img2table.ocr import TesseractOCR, PaddleOCR
 
 
 def extract_pdf():
@@ -15,7 +15,14 @@ def extract_pdf():
                                           min_confidence=50)
 
     print(extracted_tables)
+
     for page, tables in extracted_tables.items():
         for idx, table in enumerate(tables):
-            print(idx, table)
+            print(page, idx, table)
 
+    pdf.to_xlsx('data/pdf_tables.xlsx',
+                ocr=paddle_ocr)
+
+
+if __name__ == "__main__":
+    extract_pdf()
